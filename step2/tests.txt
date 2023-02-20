@@ -1,0 +1,68 @@
+Weather API Testing
+
+TEST CASE 01 - Get weather by City
+
+Request -> GET https://ninja-weather.com/v1/weather?city="Dallas"
+
+Response Code Expected -> 200
+
+Response Expected
+
+    {
+    "cloud_pct": "25",
+    "temp": 5,
+    "feels_like": -2,
+    "humidity": "81",
+    "min_temp": -8,
+    "max_temp": 10,
+    "wind_speed": "12.86",
+    "wind_degrees": "330",
+    "sunrise": "2022-12-27T12:28:32.047Z",
+    "sunset": "2022-12-27T23:27:28.021Z"
+    }
+
+TEST CASE 02 - Get weather by ZIP code
+
+Request -> GET https://ninja-weather.com/v1/weather?zip="75001"
+
+Response Code Expected -> 200
+
+Response Expected
+
+    {
+    "cloud_pct": "25",
+    "temp": 5,
+    "feels_like": -2,
+    "humidity": "81",
+    "min_temp": -8,
+    "max_temp": 10,
+    "wind_speed": "12.86",
+    "wind_degrees": "330",
+    "sunrise": "2022-12-27T12:28:32.047Z",
+    "sunset": "2022-12-27T23:27:28.021Z"
+    }
+
+TEST CASE 03 - Get weather by geolocation coordinates
+
+Request -> GET https://ninja-weather.com/v1/weather?lat="32.779167"&long="-96.808891"
+
+Response Code Expected -> 200
+
+Response Expected
+
+    {
+    "cloud_pct": "25",
+    "temp": 5,
+    "feels_like": -2,
+    "humidity": "81",
+    "min_temp": -8,
+    "max_temp": 10,
+    "wind_speed": "12.86",
+    "wind_degrees": "330",
+    "sunrise": "2022-12-27T12:28:32.047Z",
+    "sunset": "2022-12-27T23:27:28.021Z"
+    }
+
+Since the three calls are pointing to the same location but with different parameters, the responses should be similar and can be compared.
+
+In case that additional testing is needed for the multiple response codes or assertions, additional test cases should be created.
